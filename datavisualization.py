@@ -50,7 +50,7 @@ def open_random_images(path):
 
 
 def openimage():
-    path = os.path.join(os.getcwd(),"datasample/images")
+    path = os.path.join(os.getcwd(),"datasample/datasample/images")
     x = open_random_images(path)
     count = 0
     for file in x:
