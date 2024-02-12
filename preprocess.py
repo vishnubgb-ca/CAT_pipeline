@@ -35,8 +35,8 @@ def preprocess():
 
 
     # these paths need to be added in the input json file
-    nii_path = "datasample/images"  # path to the nii images
-    gt_path = "datasample/labels"  # path to the ground truth
+    nii_path = "datasample/datasample/images"  # path to the nii images
+    gt_path = "datasample/datasample/labels"  # path to the ground truth
 
     npy_path = "data/npy/" + prefix[:-1]
     os.makedirs(join(os.getcwd(),npy_path, "gts"), exist_ok=True)
