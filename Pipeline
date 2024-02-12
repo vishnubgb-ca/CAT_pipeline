@@ -1,0 +1,35 @@
+pipeline{
+    agent any
+
+    stages{
+        stage("Extract Data"){
+            steps{
+                sh 'python3 data_extract.py'
+            }
+        }
+
+        stage("Preprocess Data"){
+            steps{
+                sh 'python3 preprocess.py'
+            }
+        }
+        stage("Visualize Data"){
+            steps{
+                sh 'python3 datavisualization.py'
+            }
+        }
+        stage("Modification of Data"){
+            steps{
+                sh 'python3 datamod.py'
+            }
+        }
+      
+    }
+    post{
+       
+        always {
+            archiveArtifacts artifacts: 'tr_dataset', onlyIfSuccessful: true
+        }
+            }
+        
+}
