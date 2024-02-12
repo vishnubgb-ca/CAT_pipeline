@@ -80,7 +80,7 @@ def openimage():
         # Convert the image data to an unsigned 8-bit integer array
         slice_image = slice_image.astype('uint8')
         img_png = Image.fromarray(slice_image)
-        img_png.save(f'img/{filename}.png')
+        img_png.save(f'{filename}.png')
         count=count+1
         plt.imshow(img_data[:, :, slice_index], cmap='gray')
         plt.axis('off')  # Turn off axis
