@@ -1,10 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import os
-import mlflow
 
 join = os.path.join
-from tqdm import tqdm
+
 from skimage import transform
 import torch
 import torch.nn as nn
