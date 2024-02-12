@@ -12,6 +12,7 @@ import SimpleITK as sitk
 from matplotlib.pyplot import plot 
 import matplotlib.pyplot as plt
 from data_extract import extract_data
+from io import BytesIO
 
 def open_random_images(path):
     # Get a list of all files in the folder
