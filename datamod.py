@@ -83,7 +83,7 @@ class NpyDataset(Dataset):
 
 def data_mod():
     # %% sanity test of dataset class
-    path = os.path.join(os.getcwd(),"datasample/images")
+    path = os.path.join(os.getcwd(),"datasample/datasample/images")
     tr_dataset = NpyDataset(path)
     with open("tr_data.pkl","wb") as f:
         pickle.dump(tr_dataset,f)
