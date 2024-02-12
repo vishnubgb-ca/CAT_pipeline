@@ -17,7 +17,7 @@ import random
 from datetime import datetime
 import shutil
 import glob
-import gc
+
 import pickle
 class NpyDataset(Dataset):
     def __init__(self, data_root, bbox_shift=20):
