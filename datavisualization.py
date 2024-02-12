@@ -58,7 +58,14 @@ def openimage():
         url_response = requests.get(url)
         url_response.raise_for_status()  # Raise an error for bad responses
         with zipfile.ZipFile(BytesIO(url_response.content)) as z:
-            z.extractall('.',overwrite=True)
+            for member in z.namelist():
+                # Extract file to current directory
+                z.extract(member, path='.')
+                # Check if the extracted file already exists
+                if os.path.exists(member):
+                    print(f"File '{member}' already exists. Skipping extraction.")
+                else:
+                    print(f"Extracted '{member}'.")
         print("Data extraction successful.")
     except requests.exceptions.RequestException as e:
         print("Error downloading data:", e)
