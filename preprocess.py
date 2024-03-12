@@ -53,7 +53,7 @@ def preprocess():
     for name in names
     if os.path.exists(join(os.getcwd(),nii_path, name.split(gt_name_suffix)[0] + img_name_suffix))
     ]
-    print(f"after sanity check \# files {len(names)=}")
+    print(f"after sanity check \# files {len(names)}")
 
     tumor_id = None  # only set this when there are multiple tumors; convert semantic masks to instance masks
     # set window level and width
